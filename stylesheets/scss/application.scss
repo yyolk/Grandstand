@@ -40,15 +40,18 @@ a {
 }
 
 header {
-  min-height: $height-header;
+  @include position(fixed, 0px 0px 0 0px);
   background-color: #444;
-  padding: 0 20px;
   border-bottom: 1px solid black;
+  min-height: $height-header;
+  padding: 0 20px;
+  z-index: 9999;
 }
 
 .filters {
   @include clearfix;
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
+  float: left;
 
   a.filter {
     $height: 30px;
@@ -142,22 +145,48 @@ header {
 
   .L {
     @include size(300px);
+    font-size: 16px;
   }
 
   .XL {
     @include size(400px);
+    font-size: 18px;
   }
 }
 
-// #mask {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   background-color: white;
-//   z-index: 9999;
-// }
+@mixin pulse {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pulse { @include pulse; }
+   @-moz-keyframes pulse { @include pulse; }
+        @keyframes pulse { @include pulse; }
+
+#mask {
+  @include position(absolute, 0px 0px 0px 0px);
+  background-color: $color-background;
+  z-index: 999;
+
+  .runner {
+    $height: 40px;
+    $width: 35px;
+    @include animation(pulse 0.4s infinite alternate);
+    @include position(absolute, 50% 0 0 50%);
+    @include size(35px 40px);
+    background-image: url("../../images/runner-blue.png");
+    margin-left: -($width / 2);
+    margin-top: -($height / 2);
+  }
+}
+
+.is-loading {
+  overflow: hidden;
+}
 
 // ISOTOPE
 

@@ -15,11 +15,19 @@
   <script src="javascripts/application.js"></script>
 </head>
 
-<body>
+<body class="is-loading">
   <header>
     <nav id="users" class="users filters"></nav>
+    <nav id="statuses" class="statuses filters">
+      <a class="status filter all active" data-filter="*">All statuses</a>
+      <a class="status filter " data-filter=".someday">Someday</a>
+      <a class="status filter " data-filter=".backlog">Backlog</a>
+      <a class="status filter " data-filter=".in-progress">Current</a>
+    </nav>
   </header>
-  <div id="mask"></div>
+  <div id="mask">
+    <div class="runner"></div>
+  </div>
   <div id="items"></div>
 </body>
 </html>

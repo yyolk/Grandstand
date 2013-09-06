@@ -1,6 +1,8 @@
 $(document).ready(function() {
-  var types = ['someday', 'backlog', 'in-progress', 'completed', 'accepted'];
+  var html = '';
+  var types = ['in-progress', 'completed', 'backlog', 'someday'];
   var isotopeContainer = $('#items');
+  
   function initIsotope(delay){
     setTimeout(function(){
       isotopeContainer.isotope({
@@ -11,16 +13,21 @@ $(document).ready(function() {
         masonry: {
           columnWidth: 100,
           rowHeight: 100
+        },
+        onLayout: function(){
+          $('body').removeClass('is-loading');
+          $('#mask').fadeOut('fast');
         }
       });
     }, delay);
   };
 
   $(document).on('click', '.filter', function(){
-    $(this).toggleClass('active')
-    // var selector = $(this).attr('data-filter');
-    // isotopeContainer.isotope({ filter: selector });
-    // return false;
+    $(this).closest('.filters').find('.active').removeClass('active');
+    $(this).toggleClass('active');
+    var selector = $(this).attr('data-filter');
+    isotopeContainer.isotope({ filter: selector });
+    return false;
   });
 
   for (var i=0; i < types.length; i++) {
@@ -32,14 +39,21 @@ $(document).ready(function() {
       data: {type: type},
       context: document.body,
       success: function(data, textStatus, xhr) {
-        var html = '';
+        
         if (data.length) {
           for (var j=0; j < data.length; j++) {
             var scoreClass = data[j].score;
+            // var userId = data[j]['assigned_to']['id'];
+            var userId = ''
             if(scoreClass == '~'){
               scoreClass = 'no-score'
             }; 
-            html += '<div class="item ' + scoreClass + ' ' + data[j]['type'] + '" data-item-id="' + data[j].number + '">';
+
+            if(userId){
+              userId = 'user-' + userId;
+            };
+
+            html += '<div class="item ' + scoreClass + ' ' + data[j]['type'] + ' ' + userId + ' ' + data[j].status + '" data-item-id="' + data[j].number + '">';
             html += '<a href="' + data[j].short_url + '"><strong>#' + data[j].number + '</strong> ';
             html += '<span class="title">' + data[j].title + '</span></a>';
             html += '</div>';
@@ -64,12 +78,12 @@ $(document).ready(function() {
       //called when complete
     },
     success: function(data, textStatus, xhr) {
-      var html = '<a class="user filter all active">All users</a>'; // All user
+      var html = '<a class="user filter all active" data-filter="*">All users</a>'; // All user
       for (var i=0; i < data.length; i++) {
         if (data[i].revoked) {
 
         } else {
-          html += '<a class="user filter" data-user-id="'+data[i].id+'">'+data[i].first_name+' '+data[i].last_name+'</a>';
+          html += '<a class="user filter" data-filter=".user-'+data[i].id+'">'+data[i].first_name+' '+data[i].last_name+'</a>';
         }
       };
       $('#users').html(html);
