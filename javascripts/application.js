@@ -25,9 +25,11 @@ $(document).ready(function() {
   $(document).on('click', '.filter', function(){
     $(this).closest('.filters').find('.active').removeClass('active');
     $(this).toggleClass('active');
-    var selector = $(this).attr('data-filter');
+    var selector = '';
+    $('.filters .active').each(function(){
+      selector += $(this).attr('data-filter');
+    });
     isotopeContainer.isotope({ filter: selector });
-    return false;
   });
 
   for (var i=0; i < types.length; i++) {
@@ -78,7 +80,7 @@ $(document).ready(function() {
       //called when complete
     },
     success: function(data, textStatus, xhr) {
-      var html = '<a class="user filter all active" data-filter="*">All users</a>'; // All user
+      var html = '<a class="user filter all active" data-filter=".item">All users</a>'; // All user
       for (var i=0; i < data.length; i++) {
         if (data[i].revoked) {
 

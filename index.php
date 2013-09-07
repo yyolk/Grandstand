@@ -19,10 +19,16 @@
   <header>
     <nav id="users" class="users filters"></nav>
     <nav id="statuses" class="statuses filters">
-      <a class="status filter all active" data-filter="*">All statuses</a>
-      <a class="status filter " data-filter=".someday">Someday</a>
-      <a class="status filter " data-filter=".backlog">Backlog</a>
-      <a class="status filter " data-filter=".in-progress">Current</a>
+      <a class="status filter all active" data-filter=".item">All statuses</a>
+      <a class="status filter" data-filter=".someday">Someday</a>
+      <a class="status filter" data-filter=".backlog">Backlog</a>
+      <a class="status filter" data-filter=".in-progress">Current</a>
+    </nav>
+    <nav id="types" class="statuses filters">
+      <a class="type filter all active" data-filter=".item">All types</a>
+      <a class="type filter" data-filter=".story">Story</a>
+      <a class="type filter" data-filter=".task">Task</a>
+      <a class="type filter" data-filter=".defect">Defect</a>
     </nav>
   </header>
   <div id="mask">
