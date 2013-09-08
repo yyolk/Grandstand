@@ -50,10 +50,11 @@ $(document).ready(function() {
             if(scoreClass == '~'){
               scoreClass = 'no-score'
             }; 
-
-            if(userId){
-              userId = 'user-' + userId;
-            };
+            if(!$.isEmptyObject(data[j]['assigned_to'])){
+              userId = 'user-' + data[j]['assigned_to']['id'];
+            }
+              
+            
 
             html += '<div class="item ' + scoreClass + ' ' + data[j]['type'] + ' ' + userId + ' ' + data[j].status + '" data-item-id="' + data[j].number + '">';
             html += '<a href="' + data[j].short_url + '"><strong>#' + data[j].number + '</strong> ';
