@@ -38,12 +38,18 @@ header {
     font-weight: normal;
     line-height: 50px;
     margin-right: 10px;
-    text-shadow: 0 -1px 0 #333; }
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+    background-image: url("../../images/runner-black.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 32px;
+    background-size: 24px auto; }
     header h1 a,
     header h1 a:visited {
-      color: #666; }
+      color: #222; }
     header h1 a:hover {
-      color: #CCC; }
+      color: #CCC;
+      text-shadow: 0 -1px 0 black; }
   header a {
     color: #CCC;
     cursor: pointer; }
