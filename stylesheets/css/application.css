@@ -30,7 +30,7 @@ header {
   background-color: #444;
   border-bottom: 1px solid black;
   min-height: 50px;
-  padding: 0 20px;
+  padding: 0 30px;
   z-index: 9999; }
   header h1 {
     float: left;
@@ -223,3 +223,7 @@ header {
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   transition-duration: 0.8s; }
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1; }
