@@ -6,10 +6,21 @@
 
 Based on [Scrumly](https://github.com/simpleenergy/Scrumly) with interaction and visualization help from [Isotope](https://github.com/desandro/isotope), your Sprint.ly items are sized by their score, colored by their type, and arranged in a masonry grid.  You can filter your project's items by user, status, type, and score. 
 
+## Setup
+
+Getting started is simple, assuming you have a Sprint.ly account: 
+
+1. Clone or download this repo.
+2. Open `config.template.php`, fill in the user, product, and API information.
+3. Save as `config.php`.
+4. Setup the files on a webserver, or run locally with [MAMP](http://www.mamp.info/en/index.html).
+5. Open `index.php` in your favorite browser.
+
 ## To do
 
 This method of interacting with a Sprint.ly queue has promise.  Additional features that would make this too more useful: 
 
+* Come up with a better name.
 * Sort items by number, date added, activity, etc.
 * Display item meta information beyond number and title.
 * POST operations.
