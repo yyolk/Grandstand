@@ -56,6 +56,7 @@
         <li role="menuitem"><a class="filter" data-filter=".XL">X-Large</a></li>
       </ul>
     </div>
+    <a class="shuffle">&#8635; Shuffle</a>
   </header>
   <div id="mask">
     <div class="runner"></div>

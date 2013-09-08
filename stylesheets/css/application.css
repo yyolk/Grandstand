@@ -44,6 +44,14 @@ header {
       color: #666; }
     header h1 a:hover {
       color: #CCC; }
+  header a {
+    color: #CCC;
+    cursor: pointer; }
+    header a:hover {
+      color: white; }
+  header .shuffle {
+    float: right;
+    line-height: 50px; }
 
 .dropdown {
   float: left;
@@ -54,15 +62,13 @@ header {
   border-radius: 3px;
   border: 1px solid #222;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  color: #CCC;
   cursor: pointer;
   display: inline-block;
   height: 30px;
   line-height: 30px;
   padding: 0 10px; }
   .dropdown-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white; }
+    background-color: rgba(255, 255, 255, 0.05); }
 
 .dropdown-menu {
   position: absolute;

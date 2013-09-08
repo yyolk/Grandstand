@@ -1,8 +1,9 @@
 $(document).ready(function() {
   var html = '';
-  var types = ['in-progress', 'completed', 'backlog', 'someday'];
+  var types = ['in-progress', 'completed', 'backlog', 'someday']; 
   var isotopeContainer = $('#items');
   
+  // Setup Isotope
   function initIsotope(delay){
     setTimeout(function(){
       isotopeContainer.isotope({
@@ -22,6 +23,12 @@ $(document).ready(function() {
     }, delay);
   };
 
+  // This is silly, but why not?
+  $(document).on('click', '.shuffle', function(){
+    isotopeContainer.isotope('shuffle');
+  });
+
+  // Filter items
   $(document).on('click', '.filter', function(){
     var filterLabel = $(this).text();
     $(this).closest('.filters').find('.active').removeClass('active');
@@ -34,6 +41,7 @@ $(document).ready(function() {
     isotopeContainer.isotope({ filter: selector });
   });
 
+  // Collect items
   for (var i=0; i < types.length; i++) {
     var type = types[i];
     $.ajax({
@@ -71,6 +79,7 @@ $(document).ready(function() {
     });
   };
 
+  // Get a list of team members
   $.ajax({
     url: '/people.php',
     type: 'GET',
@@ -95,9 +104,4 @@ $(document).ready(function() {
       // Called when there is an error
     }
   });
-
-});
-
-$(window).load(function(){
-  
 });
