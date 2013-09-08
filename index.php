@@ -1,3 +1,5 @@
+<?php require 'config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,24 +14,48 @@
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="javascripts/vendor/jquery.isotope.min.js"></script>
+  <script src="javascripts/vendor/dropdown.js"></script>
   <script src="javascripts/application.js"></script>
 </head>
 
 <body class="is-loading">
   <header>
-    <nav id="users" class="users filters"></nav>
-    <nav id="statuses" class="statuses filters">
-      <a class="status filter all active" data-filter=".item">All statuses</a>
-      <a class="status filter" data-filter=".someday">Someday</a>
-      <a class="status filter" data-filter=".backlog">Backlog</a>
-      <a class="status filter" data-filter=".in-progress">Current</a>
-    </nav>
-    <nav id="types" class="statuses filters">
-      <a class="type filter all active" data-filter=".item">All types</a>
-      <a class="type filter" data-filter=".story">Story</a>
-      <a class="type filter" data-filter=".task">Task</a>
-      <a class="type filter" data-filter=".defect">Defect</a>
-    </nav>
+    <h1><a href="/"><?php echo $config['sprintly']['product_name'] ?></a></h1>
+    <div id="users" class="filters dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">All users</a>
+      <ul class="dropdown-menu" role="menu">
+      </ul>
+    </div>
+    </div>
+    <div id ="statuses" class="filters dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">All statuses</a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="filter all active" data-filter=".item">All statuses</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".someday">Someday</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".backlog">Backlog</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".in-progress">Current</a></li>
+      </ul>
+    </div>
+    <div id="types" class="filters dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">All types</a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="filter all active" data-filter=".item">All types</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".story">Story</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".task">Task</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".defect">Defect</a></li>
+      </ul>
+    </div>
+    <div id="scores" class="filters dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown">All scores</a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="filter all active" data-filter=".item">All scores</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".no-score">No score</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".S">Small</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".M">Medium</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".L">Large</a></li>
+        <li role="menuitem"><a class="filter" data-filter=".XL">X-Large</a></li>
+      </ul>
+    </div>
   </header>
   <div id="mask">
     <div class="runner"></div>

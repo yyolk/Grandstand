@@ -23,8 +23,10 @@ $(document).ready(function() {
   };
 
   $(document).on('click', '.filter', function(){
+    var filterLabel = $(this).text();
     $(this).closest('.filters').find('.active').removeClass('active');
     $(this).toggleClass('active');
+    $(this).closest('.dropdown').find('.dropdown-toggle').text(filterLabel);
     var selector = '';
     $('.filters .active').each(function(){
       selector += $(this).attr('data-filter');
@@ -45,21 +47,16 @@ $(document).ready(function() {
         if (data.length) {
           for (var j=0; j < data.length; j++) {
             var scoreClass = data[j].score;
-            // var userId = data[j]['assigned_to']['id'];
-            var userId = ''
             if(scoreClass == '~'){
               scoreClass = 'no-score'
             }; 
             if(!$.isEmptyObject(data[j]['assigned_to'])){
               userId = 'user-' + data[j]['assigned_to']['id'];
             }
-              
-            
-
-            html += '<div class="item ' + scoreClass + ' ' + data[j]['type'] + ' ' + userId + ' ' + data[j].status + '" data-item-id="' + data[j].number + '">';
-            html += '<a href="' + data[j].short_url + '"><strong>#' + data[j].number + '</strong> ';
-            html += '<span class="title">' + data[j].title + '</span></a>';
-            html += '</div>';
+            html += '<a href="' + data[j].short_url + '"  class="item ' + scoreClass + ' ' + data[j]['type'] + ' ' + userId + ' ' + data[j].status + '" data-item-id="' + data[j].number + '" target="_blank">';
+            html += '<div><strong>#' + data[j].number + '</strong> ';
+            html += '<span class="title">' + data[j].title + '</span></div>';
+            html += '</a>';
           };
         } else {
           html = '<div><div>No items</div></div>';
@@ -86,10 +83,14 @@ $(document).ready(function() {
         if (data[i].revoked) {
 
         } else {
-          html += '<a class="user filter" data-filter=".user-'+data[i].id+'">'+data[i].first_name+' '+data[i].last_name+'</a>';
+          html += '<li role="menuitem">';
+          html += '<a class="user filter" data-filter=".user-'+data[i].id+'">';
+          html += data[i].first_name + ' ' + data[i].last_name;
+          html += '</a>';
+          html += '</li>';
         }
       };
-      $('#users').html(html);
+      $('#users .dropdown-menu').html(html);
     },
     error: function(xhr, textStatus, errorThrown) {
       //called when there is an error
