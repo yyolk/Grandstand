@@ -1,7 +1,6 @@
 dist/
 .DS_Store
 config.php
-config.template.php
 .buildpath
 .project
 .settings
