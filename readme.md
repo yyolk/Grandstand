@@ -4,6 +4,9 @@
 
 ![Screenshot](http://f.cl.ly/items/0F3P0Y38331X3j2P0h2e/screenshot.png)
 
+Grandstand in action...
+![Animated screenshot](http://f.cl.ly/items/0e3q151b00042H0a390d/granstand.gif)
+
 Based on [Scrumly](https://github.com/simpleenergy/Scrumly) with interaction and visualization help from [Isotope](https://github.com/desandro/isotope), with Grandstand your Sprint.ly items are sized by their score, colored by their type, and arranged in a masonry grid.  You can filter your project's items by user, status, type, and score. 
 
 ## Setup
