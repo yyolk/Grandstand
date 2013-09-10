@@ -23,7 +23,7 @@ Getting started is simple, assuming you have a Sprint.ly account:
 
 ## To do
 
-The inital drive to create this project was to experiment with new ways of visualizing and interacting with an Agile queue beyond the standard column layout. This particular method has promise, and the tool could be developed to compliment the more extensive functionality available on Sprint.ly itself. Additional features that would make this too more useful: 
+This project goal is to experiment with new ways of visualizing and interacting with an Agile queue beyond the standard column layout. Grandstand should be improved to make better use of the more functionality offered by the Sprint.ly API. Additional features that would make Grandstand more useful: 
 
 * Sort items by number, date added, activity, etc.
 * Display item meta information beyond number and title.
