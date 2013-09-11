@@ -1,4 +1,5 @@
 @import "bourbon/bourbon";
+@import "reset";
 
 // MIXINS
 
@@ -48,12 +49,16 @@ a {
   text-decoration: none;
 }
 
+.width-wrapper {
+  @include clearfix;
+  margin: 0 auto;
+}
+
 header {
   @include position(fixed, 0px 0px 0 0px);
   background-color: #444;
   border-bottom: 1px solid black;
   min-height: $height-header;
-  padding: 0 30px;
   z-index: 9999;
 
   h1 {
@@ -175,8 +180,7 @@ header {
   @include size(100%);
   @include position(relative, $height-header 0 0 0);
   overflow: visible;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 
   .item {
     background-color: white;

@@ -1,7 +1,13 @@
 $(document).ready(function() {
   var html = '';
-  var types = ['in-progress', 'completed', 'backlog', 'someday']; 
+  var types = ['in-progress', 'completed', 'backlog', 'someday'];
   var isotopeContainer = $('#items');
+  var isotopeGridWidth = 100
+  var windowWidth = $(window).width();
+  var wrapperWidth = isotopeGridWidth * Math.floor(windowWidth / isotopeGridWidth);
+
+  // Center content in browser based on isotop grid
+  $('.width-wrapper').width( wrapperWidth + 'px');
   
   // Setup Isotope
   function initIsotope(delay){
@@ -12,8 +18,8 @@ $(document).ready(function() {
         containerStyle: { overflow: 'visible' },
         gutter: 0,
         masonry: {
-          columnWidth: 100,
-          rowHeight: 100
+          columnWidth: isotopeGridWidth,
+          rowHeight: isotopeGridWidth
         },
         onLayout: function(){
           $('body').removeClass('is-loading');
