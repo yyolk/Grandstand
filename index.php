@@ -56,12 +56,15 @@
           <li role="menuitem"><a class="filter" data-filter=".XL">X-Large</a></li>
         </ul>
       </div>
-      <a class="shuffle">&#8635; Shuffle</a>
+      <div class="view-mode" data-toggle="group">
+        <a class="button active" data-icon="grid" data-toggles="grid"></a>
+        <a class="button" data-icon="list" data-toggles="list"></a>
+      </div>
     </div>
   </header>
   <div id="mask">
     <div class="runner"></div>
   </div>
-  <div id="items" class="width-wrapper"></div>
+  <div id="items" class="width-wrapper" data-view="grid"></div>
 </body>
 </html>

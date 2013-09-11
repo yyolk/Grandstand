@@ -8,6 +8,16 @@ $(document).ready(function() {
 
   // Center content in browser based on isotop grid
   $('.width-wrapper').width( wrapperWidth + 'px');
+
+  $(document).on('click', '[data-toggle="group"] .button', function(){
+    $(this).closest('[data-toggle="group"]').find('.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $(document).on('click', '.view-mode .button', function(){
+    var layout = $(this).data('toggles');
+    isotopeContainer.attr('data-view', layout).isotope('reLayout');
+  });
   
   // Setup Isotope
   function initIsotope(delay){
