@@ -5,9 +5,10 @@ $(document).ready(function() {
   var isotopeGridWidth = 100
   var windowWidth = $(window).width();
   var wrapperWidth = isotopeGridWidth * Math.floor(windowWidth / isotopeGridWidth);
+  var wrapperWidthFlex = wrapperWidth / windowWidth * 100;
 
   // Center content in browser based on isotop grid
-  $('.width-wrapper').width( wrapperWidth + 'px');
+  $('.width-wrapper').width( wrapperWidthFlex + '%');
 
   $(document).on('click', '[data-toggle="group"] .button', function(){
     $(this).closest('[data-toggle="group"]').find('.active').removeClass('active');
