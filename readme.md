@@ -39,10 +39,10 @@ You're mostly on your own. You can use environment variables to setup your Grand
 
 ## To do
 
-This project goal is to experiment with new ways of visualizing and interacting with an Agile queue beyond the standard column layout. Grandstand should be improved to make better use of the more functionality offered by the Sprint.ly API. Additional features that would make Grandstand more useful: 
+This project goal is to experiment with new ways of visualizing and interacting with an Agile queue beyond the standard column layout. Grandstand should be improved to make better use of the more functionality offered by the Sprint.ly API. Additional features that would make Grandstand more useful (these and and other odds and ends are in [issues](https://github.com/andrewliebchen/Grandstand/issues?state=open)): 
 
 * Sort items by number, date added, activity, etc.
 * Display item meta information beyond number and title.
-* Build a configuration pane to allow users to input information for their own projects. With this feature, there could be a publically accessiable demo.
+* Build a configuration pane to allow users to input information for their own projects. With this feature, there could be a publicaly accessible demo.
 * Filter on multiple parameters within the same dimension.
-* Figure out how to get around the 100 item API limit.
+* ~~Figure out how to get around the 100 item API limit.~~ Thanks, [@t1mmen](https://github.com/t1mmen)!
