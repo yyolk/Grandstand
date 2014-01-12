@@ -84,7 +84,8 @@ a {
   text-decoration: none;
 }
 
-.button, .dropdown-toggle {
+.dropdown-toggle,
+.button {
   border-radius: 3px;
   border: 1px solid #222;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -95,26 +96,32 @@ a {
   padding: 0 10px;
   color: #CCC;
 }
-.button:hover, .dropdown-toggle:hover {
+.dropdown-toggle:hover,
+.button:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
 }
-.button.active, .active.dropdown-toggle, .button.active:hover, .active.dropdown-toggle:hover {
+.active.dropdown-toggle, .active.dropdown-toggle:hover,
+.button.active,
+.button.active:hover {
   background-color: black;
   color: white;
   cursor: default;
 }
 
-.button-group .button, header .view-mode .button, .button-group .dropdown-toggle, header .view-mode .dropdown-toggle {
+header .view-mode .button,
+.button-group .button {
   border-radius: 0;
   float: left;
   margin-left: -1px;
 }
-.button-group .button:first-child, header .view-mode .button:first-child, .button-group .dropdown-toggle:first-child, header .view-mode .dropdown-toggle:first-child {
+header .view-mode .button:first-child,
+.button-group .button:first-child {
   border-radius: 3px 0 0 3px;
   margin-left: 0;
 }
-.button-group .button:last-child, header .view-mode .button:last-child, .button-group .dropdown-toggle:last-child, header .view-mode .dropdown-toggle:last-child {
+header .view-mode .button:last-child,
+.button-group .button:last-child {
   border-radius: 0 3px 3px 0;
 }
 
@@ -142,24 +149,16 @@ header {
 }
 header h1 {
   float: left;
-  font-size: 18px;
-  font-weight: normal;
-  line-height: 50px;
   margin-right: 10px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+header h1 a {
+  width: 24px;
+  height: 50px;
+  display: block;
   background-image: url("../../images/runner-black.png");
   background-repeat: no-repeat;
   background-position: left center;
-  padding-left: 32px;
   background-size: 24px auto;
-}
-header h1 a,
-header h1 a:visited {
-  color: #222;
-}
-header h1 a:hover {
-  color: #CCC;
-  text-shadow: 0 -1px 0 black;
 }
 header .view-mode {
   float: right;
@@ -233,17 +232,17 @@ header .view-mode {
 }
 #items .item {
   background-color: white;
-  border: 1px solid #ecebe2;
-  box-shadow: inset 0 0 0 1px #c4c0a4, inset 0 0 0 3px rgba(255, 255, 255, 0.5);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 2px solid #ecebe2;
+  box-shadow: inset 0 0 0 1px #cecbb4, inset 0 0 0 3px rgba(255, 255, 255, 0.5);
   border-radius: 3px;
-  position: relative;
   display: block;
+  line-height: 1.3;
+  position: relative;
 }
 #items .item:hover {
   z-index: 10;
-  border-color: #c4c0a4;
-  box-shadow: inset 0 0 0 1px #c4c0a4, inset 0 0 0 3px rgba(255, 255, 255, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 1px #bab695, inset 0 0 0 3px rgba(255, 255, 255, 0.5), inset 0 0 50px rgba(255, 255, 255, 0.8);
 }
 #items div {
   position: absolute;
@@ -267,6 +266,9 @@ header .view-mode {
 #items .story {
   background-color: #e4efcf;
 }
+#items .test {
+  background-color: #d9ecf0;
+}
 
 [data-view="grid"] .no-score,
 [data-view="grid"] .S {
@@ -286,7 +288,7 @@ header .view-mode {
 [data-view="grid"] .XL {
   width: 400px;
   height: 400px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 [data-view="list"] .item {
@@ -305,6 +307,16 @@ header .view-mode {
 }
 
 @-moz-keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes pulse {
   0% {
     opacity: 0.3;
   }

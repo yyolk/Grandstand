@@ -19,7 +19,7 @@
 <body class="is-loading">
   <header>
     <div class="width-wrapper">
-      <h1><a href="/"><?php echo $config['sprintly']['product_name'] ?></a></h1>
+      <h1><a href="/"></a></h1>
       <div id="users" class="filters dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">All users</a>
         <ul class="dropdown-menu" role="menu">
