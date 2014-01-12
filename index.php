@@ -13,8 +13,6 @@
   <link href="stylesheets/css/application.css" rel="stylesheet" type="text/css"> 
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="javascripts/vendor/jquery.isotope.min.js"></script>
-  <script src="javascripts/vendor/dropdown.js"></script>
   <script src="javascripts/application.js"></script>
 </head>
 
