@@ -37,6 +37,10 @@ Grandstand can easily be deployed to Heroku, but you probably don't want to put 
 
 You're mostly on your own. You can use environment variables to setup your Grandstand configuration. See `Heroku` above for more information.
 
+## Contributing?
+
+This project uses [Grunt](http://gruntjs.com/) to compile Sass to CSS, concatenate, minify, and uglify the JavaScript, and watches for changes to these files. If you're working on this project, run `npm install` in the project directory, and once the packages installs, run `grunt`.
+
 ## To do
 
 This project goal is to experiment with new ways of visualizing and interacting with an Agile queue beyond the standard column layout. Grandstand should be improved to make better use of the more functionality offered by the Sprint.ly API. Additional features that would make Grandstand more useful (these and and other odds and ends are in [issues](https://github.com/andrewliebchen/Grandstand/issues?state=open)): 
