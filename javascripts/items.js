@@ -15,7 +15,7 @@ $(document).ready(function() {
     $(this).addClass('active');
   });
 
-  $(document).on('click', '.view-mode .button', function(){
+  $(document).on('click', '.view-action .button', function(){
     var layout = $(this).data('toggles');
     isotopeContainer.attr('data-view', layout).isotope('reLayout');
   });
