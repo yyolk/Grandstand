@@ -54,9 +54,15 @@
           <li role="menuitem"><a class="filter" data-filter=".XL">X-Large</a></li>
         </ul>
       </div>
-      <div class="view-mode" data-toggle="group">
-        <a class="button active" data-icon="grid" data-toggles="grid"></a>
-        <a class="button" data-icon="list" data-toggles="list"></a>
+      <div class="view-actions">
+        <div class="view-action">
+          <input type="text" data-search="item" placeholder="Search items">
+          <a data-icon="close" data-search="close"></a>
+        </div>
+        <div class="view-action" data-toggle="group">
+          <a class="button active" data-icon="grid" data-toggles="grid"></a>
+          <a class="button" data-icon="list" data-toggles="list"></a>
+        </div>
       </div>
     </div>
   </header>

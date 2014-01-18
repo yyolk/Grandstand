@@ -84,7 +84,7 @@ a {
   text-decoration: none;
 }
 
-.dropdown-toggle,
+header [data-search="item"], .dropdown-toggle,
 .button {
   border-radius: 3px;
   border: 1px solid #222;
@@ -96,12 +96,12 @@ a {
   padding: 0 10px;
   color: #CCC;
 }
-.dropdown-toggle:hover,
+header [data-search="item"]:hover, .dropdown-toggle:hover,
 .button:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: white;
 }
-.active.dropdown-toggle, .active.dropdown-toggle:hover,
+header .active[data-search="item"], header [data-search="item"]:focus, .active.dropdown-toggle, header .active[data-search="item"]:hover, header [data-search="item"]:hover:focus, .active.dropdown-toggle:hover,
 .button.active,
 .button.active:hover {
   background-color: black;
@@ -109,18 +109,18 @@ a {
   cursor: default;
 }
 
-header .view-mode .button,
+header [data-toggle="group"] .button,
 .button-group .button {
   border-radius: 0;
   float: left;
   margin-left: -1px;
 }
-header .view-mode .button:first-child,
+header [data-toggle="group"] .button:first-child,
 .button-group .button:first-child {
   border-radius: 3px 0 0 3px;
   margin-left: 0;
 }
-header .view-mode .button:last-child,
+header [data-toggle="group"] .button:last-child,
 .button-group .button:last-child {
   border-radius: 0 3px 3px 0;
 }
@@ -142,7 +142,7 @@ header {
   top: 0px;
   right: 0px;
   left: 0px;
-  background-color: #444;
+  background-color: #444444;
   border-bottom: 1px solid black;
   min-height: 50px;
   z-index: 9999;
@@ -160,9 +160,68 @@ header h1 a {
   background-position: left center;
   background-size: 24px auto;
 }
-header .view-mode {
+header .view-actions {
   float: right;
-  padding: 10px 0;
+  margin: 10px 0;
+}
+header .view-action {
+  float: left;
+  margin-left: 10px;
+  position: relative;
+}
+header [data-search="item"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: width, 0.2s;
+  -moz-transition: width, 0.2s;
+  transition: width, 0.2s;
+  background-color: transparent;
+  cursor: text;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 14px;
+  width: 160px;
+}
+header [data-search="item"]::-webkit-input-placeholder {
+  color: #777;
+  font-size: inherit;
+  font-style: italic;
+}
+header [data-search="item"]:-moz-placeholder {
+  color: #777;
+  font-size: inherit;
+  font-style: italic;
+}
+header [data-search="item"]::-moz-placeholder {
+  color: #777;
+  font-size: inherit;
+  font-style: italic;
+}
+header [data-search="item"]:-ms-input-placeholder {
+  color: #777;
+  font-size: inherit;
+  font-style: italic;
+}
+header [data-search="item"]:focus {
+  box-shadow: 0 0 0 2px #666;
+  outline: none;
+  width: 260px;
+}
+header [data-search="close"] {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 10px;
+  height: 30px;
+  line-height: 32px;
+  color: #999;
+  cursor: pointer;
+  opacity: 0.3;
+}
+header [data-search="close"]:hover {
+  opacity: 1 !important;
 }
 
 .dropdown {
@@ -243,6 +302,9 @@ header .view-mode {
   z-index: 10;
   border-color: rgba(255, 255, 255, 0.5);
   box-shadow: inset 0 0 0 1px #bab695, inset 0 0 0 3px rgba(255, 255, 255, 0.5), inset 0 0 50px rgba(255, 255, 255, 0.8);
+}
+#items .item.hide {
+  display: none;
 }
 #items div {
   position: absolute;
@@ -393,6 +455,10 @@ header .view-mode {
 [data-icon] {
   font-family: entypo;
   font-size: 30px;
+}
+
+[data-icon="close"]::before {
+  content: "\274E";
 }
 
 [data-icon="grid"]::before {
