@@ -28,7 +28,7 @@ function queryItemsApi($page = 0, $limit = 100) {
 	$offset = $page * $limit;
 	$headers = array('Accept' => 'application/json');
 	$options = array('auth' => array( $config['sprintly']['api_username'], $config['sprintly']['api_key']));
-	$data = array('limit'=>$limit, 'offset' => $offset, 'status'=>$_GET['type']);
+	$data = array('limit'=>$limit, 'offset' => $offset, 'status'=>$_GET['status']);
 	$request = Requests::request('https://sprint.ly/api/products/'.$config['sprintly']['product_id'].'/items.json', $headers, $data, Requests::GET, $options);
 
 	return json_decode($request->body, true);

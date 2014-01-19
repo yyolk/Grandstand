@@ -22,8 +22,19 @@
       <h1><a href="/"></a></h1>
       <div id="users" class="filters dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">All users</a>
-        <ul class="dropdown-menu" role="menu">
-        </ul>
+        <script id="user_template" type="text/x-handlebars-template">
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="user filter all active" data-filter=".item">All users</a></li>
+            {{#each users}}
+              <li role="menuitem">
+                <a class="user filter" data-filter=".user-{{id}}">
+                  {{firstName}} {{lastName}}
+                </a>
+              </li>
+            {{/each}}
+            <li role="menuitem"><a class="user filter" data-filter=".unassigned">Unassigned</a></li>
+          </ul>
+        </script>
       </div>
       <div id ="statuses" class="filters dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">All statuses</a>
@@ -69,6 +80,17 @@
   <div id="mask">
     <div class="runner"></div>
   </div>
-  <div id="items" class="width-wrapper" data-view="grid"></div>
+  <div id="items" class="width-wrapper" data-view="grid">
+    <script id="item_template" type="text/x-handlebars-template">
+      {{#each items}}
+        <a href="{{{shortUrl}}}"class="item {{status}} {{score}} {{type}} {{assignedToID}}" target="_blank">
+          <div>
+            <strong>#{{number}}</strong>
+            <span class="title">{{title}}</span>
+          </div>
+        </a>
+      {{/each}}
+    </script>
+  </div>
 </body>
 </html>

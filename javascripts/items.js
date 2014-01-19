@@ -1,20 +1,25 @@
 $(document).ready(function() {
-  var html = '';
-  var types = ['in-progress', 'completed', 'backlog', 'someday'];
+  var items = []; // Array for grid items
+  var users = []; // Array for user dropdown
+  var statuses = ['in-progress', 'completed', 'backlog', 'someday'];
+
   var isotopeContainer = $('#items');
-  var isotopeGridWidth = 100
+  var isotopeGridWidth = 100 // Smallest size for item grid
+
   var windowWidth = $(window).width();
   var wrapperWidth = isotopeGridWidth * Math.floor(windowWidth / isotopeGridWidth);
   var wrapperWidthFlex = wrapperWidth / windowWidth * 100;
 
-  // Center content in browser based on isotop grid
+  // Center content in browser based on isotope grid
   $('.width-wrapper').width( wrapperWidthFlex + '%');
 
+  // Toggle button functionality
   $(document).on('click', '[data-toggle="group"] .button', function(){
     $(this).closest('[data-toggle="group"]').find('.active').removeClass('active');
     $(this).addClass('active');
   });
 
+  // Toggle the view modes
   $(document).on('click', '.view-action .button', function(){
     var layout = $(this).data('toggles');
     isotopeContainer.attr('data-view', layout).isotope('reLayout');
@@ -34,6 +39,8 @@ $(document).ready(function() {
         isotopeContainer.isotope({ filter: '.quicksearch-match' }).isotope(); 
       }, 100 );
     });
+
+    // Clear the faux-search
     $(document).on('click', '[data-search="close"]', function(event){
       event.preventDefault();
       $('.quicksearch-match').removeClass('quicksearch-match');
@@ -76,67 +83,74 @@ $(document).ready(function() {
     isotopeContainer.isotope({ filter: selector });
   });
 
-  // Collect items
-  for (var i=0; i < types.length; i++) {
-    var type = types[i];
+  // Collect and render items
+  for (var h=0; h < statuses.length; h++) {
+    var status = statuses[h];
     $.ajax({
       url: '/items.php',
       type: 'GET',
-      dataType: 'json',
-      data: {type: type},
-      context: document.body,
-      success: function(data, textStatus, xhr) {
-        if (data.length) {
-          for (var j=0; j < data.length; j++) {
-            var scoreClass = data[j].score;
-            if(scoreClass == '~'){
-              scoreClass = 'no-score'
-            }; 
-            if(!$.isEmptyObject(data[j]['assigned_to'])){
-              userId = 'user-' + data[j]['assigned_to']['id'];
-            } else {
-              userId = 'unassigned'
-            }
-            html += '<a href="' + data[j].short_url + '"  class="item ' + scoreClass + ' ' + data[j]['type'] + ' ' + userId + ' ' + data[j].status + '" target="_blank">';
-            html += '<div><strong>#' + data[j].number + '</strong> ';
-            html += '<span class="title">' + data[j].title + '</span></div>';
-            html += '</a>';
+      data: {status : status},
+      dataType: "json",
+      success: function(json) {
+        for (var i=0; i < json.length; i++) {
+          var assignedToID = 'unassigned';
+
+          if (json[i].score == '~'){
+            json[i].score = 'no-score';
+          }
+          if (!$.isEmptyObject(json[i].assigned_to)) {
+            assignedToID = 'user-' + json[i].assigned_to.id;
           };
-        } else {
-          html = '<div class="missing-data">No items</div>';
+
+          var item = {
+            title        : json[i].title,
+            number       : json[i].number,
+            status       : json[i].status,
+            score        : json[i].score,
+            type         : json[i].type,
+            assignedToID : assignedToID,
+            shortUrl     : json[i].short_url
+          };
+          
+          items.push(item);
         };
-        $('#items').html(html);
-        initIsotope(1000);
-      },
-      error: function(xhr, textStatus, errorThrown) {
-        $('#items').html('<div class="missing-data">Error</div>');
+
+        var context = { items: items };
+        var source = $("#item_template").html();
+        template = Handlebars.compile(source);
+        $("#items").append(template(context));
+        console.log(context);
+        console.log(source);
       }
     });
   };
 
-  // Get a list of team members
+  // Wish this could be on a call back when everything is rendered
+  initIsotope(9000);
+  
+  // Populate the users dropdown
   $.ajax({
     url: '/people.php',
     type: 'GET',
     dataType: 'json',
-    complete: function(xhr, textStatus) {
-      // Called when complete
-    },
-    success: function(data, textStatus, xhr) {
-      var html = '<a class="user filter all active" data-filter=".item">All users</a>'; // All user
-      for (var i=0; i < data.length; i++) {
-        if (!data[i].revoked) {
-          html += '<li role="menuitem">';
-          html += '<a class="user filter" data-filter=".user-'+data[i].id+'">';
-          html += data[i].first_name + ' ' + data[i].last_name;
-          html += '</a>';
-          html += '</li>';
-        }
+    success: function(json) {
+      for (var i=0; i < json.length; i++) {
+        var user = {
+          firstName : json[i].first_name,
+          lastName  : json[i].last_name,
+          id        : json[i].id,
+          email     : json[i].email
+        };
+
+        users.push(user);
       };
-      $('#users .dropdown-menu').html(html);
-    },
-    error: function(xhr, textStatus, errorThrown) {
-      // Called when there is an error
+
+      var context = { users : users };
+      var source = $("#user_template").html();
+      template = Handlebars.compile(source);
+      $("#users").append(template(context));
+      console.log(context);
+      console.log(source);
     }
   });
 });
