@@ -456,7 +456,7 @@ $(document).ready(function() {
           html = '<div class="missing-data">No items</div>';
         };
         $('#items').html(html);
-        initIsotope(2000);
+        initIsotope(1000);
       },
       error: function(xhr, textStatus, errorThrown) {
         $('#items').html('<div class="missing-data">Error</div>');
