@@ -209,6 +209,13 @@ header [data-search="item"]:focus {
   outline: none;
   width: 260px;
 }
+header [data-search="item"]:focus + [data-search="close"] {
+  cursor: pointer;
+  opacity: 0.3;
+}
+header [data-search="item"]:focus + [data-search="close"]:hover {
+  opacity: 1 !important;
+}
 header [data-search="close"] {
   position: absolute;
   top: 0px;
@@ -217,11 +224,7 @@ header [data-search="close"] {
   height: 30px;
   line-height: 32px;
   color: #999;
-  cursor: pointer;
-  opacity: 0.3;
-}
-header [data-search="close"]:hover {
-  opacity: 1 !important;
+  opacity: 0;
 }
 
 .dropdown {
