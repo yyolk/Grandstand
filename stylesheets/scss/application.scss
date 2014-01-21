@@ -103,11 +103,16 @@ a {
 
 // HEADER
 header {
+  @include transition(all 0.3s ease-in);
   @include position(fixed, 0px 0px 0 0px);
   background-color: $color-header;
   border-bottom: 1px solid black;
   min-height: $height-header;
   z-index: 9999;
+
+  .is-loading & {
+    @include transform(translateY(-($height-header + 1px)));
+  }
 
   h1 {
     float: left;

@@ -138,6 +138,9 @@ header [data-toggle="group"] .button:last-child,
 }
 
 header {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -146,6 +149,13 @@ header {
   border-bottom: 1px solid black;
   min-height: 50px;
   z-index: 9999;
+}
+.is-loading header {
+  -webkit-transform: translateY(-51px);
+  -moz-transform: translateY(-51px);
+  -ms-transform: translateY(-51px);
+  -o-transform: translateY(-51px);
+  transform: translateY(-51px);
 }
 header h1 {
   float: left;
