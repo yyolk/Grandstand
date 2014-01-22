@@ -12,13 +12,13 @@
 @include font-face(entypo, '/fonts/entypo/entypo');
 
 // VARIABLES
-$color-background: #EFF0EC;
+$color-background: #F0EFEB;
 $color-text:       #444;
 
 $color-header: rgba($color-background, 0.9);
 $color-header-border: darken($color-background, 20%);
 
-$color-button: darken($color-background, 25%);
+$color-button: darken($color-background, 30%);
 
 $color-defect: #DB6463;
 $color-story:  #32BF90;

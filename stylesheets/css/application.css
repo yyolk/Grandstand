@@ -67,7 +67,7 @@ body {
   line-height: 20px;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
-  background-color: #eff0ec;
+  background-color: #f0efeb;
   border: 0;
 }
 
@@ -87,8 +87,8 @@ a {
 header [data-search="item"], .dropdown-toggle,
 .button {
   border-radius: 3px;
-  border: 1px solid #b3b8a5;
-  color: #b3b8a5;
+  border: 1px solid #aea994;
+  color: #aea994;
   cursor: pointer;
   display: inline-block;
   height: 30px;
@@ -97,13 +97,13 @@ header [data-search="item"], .dropdown-toggle,
 }
 header [data-search="item"]:hover, .dropdown-toggle:hover,
 .button:hover {
-  background-color: #b3b8a5;
+  background-color: #aea994;
   color: white;
 }
 header .active[data-search="item"], header [data-search="item"]:focus, .active.dropdown-toggle, header .active[data-search="item"]:hover, header [data-search="item"]:hover:focus, .active.dropdown-toggle:hover,
 .button.active,
 .button.active:hover {
-  background-color: #b3b8a5;
+  background-color: #aea994;
   color: white;
   cursor: default;
 }
@@ -144,7 +144,7 @@ header {
   top: 0px;
   right: 0px;
   left: 0px;
-  background-color: rgba(239, 240, 236, 0.9);
+  background-color: rgba(240, 239, 235, 0.9);
   border-bottom: 1px solid transparent;
   min-height: 50px;
   z-index: 9999;
@@ -157,7 +157,7 @@ header {
   transform: translateY(-51px);
 }
 .is-scrolling header {
-  border-color: #bfc3b3;
+  border-color: #c4c0b1;
 }
 header h1 {
   float: left;
@@ -196,25 +196,25 @@ header [data-search="item"] {
   width: 160px;
 }
 header [data-search="item"]::-webkit-input-placeholder {
-  color: #b3b8a5;
+  color: #aea994;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: inherit;
   font-style: italic;
 }
 header [data-search="item"]:-moz-placeholder {
-  color: #b3b8a5;
+  color: #aea994;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: inherit;
   font-style: italic;
 }
 header [data-search="item"]::-moz-placeholder {
-  color: #b3b8a5;
+  color: #aea994;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: inherit;
   font-style: italic;
 }
 header [data-search="item"]:-ms-input-placeholder {
-  color: #b3b8a5;
+  color: #aea994;
   font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: inherit;
   font-style: italic;
@@ -224,16 +224,16 @@ header [data-search="item"]:focus {
   width: 260px;
 }
 header [data-search="item"]:focus::-webkit-input-placeholder {
-  color: rgba(239, 240, 236, 0.5);
+  color: rgba(240, 239, 235, 0.5);
 }
 header [data-search="item"]:focus:-moz-placeholder {
-  color: rgba(239, 240, 236, 0.5);
+  color: rgba(240, 239, 235, 0.5);
 }
 header [data-search="item"]:focus::-moz-placeholder {
-  color: rgba(239, 240, 236, 0.5);
+  color: rgba(240, 239, 235, 0.5);
 }
 header [data-search="item"]:focus:-ms-input-placeholder {
-  color: rgba(239, 240, 236, 0.5);
+  color: rgba(240, 239, 235, 0.5);
 }
 header [data-search="item"]:focus + [data-search="close"] {
   cursor: pointer;
@@ -248,7 +248,7 @@ header [data-search="close"] {
   right: 10px;
   width: 10px;
   height: 30px;
-  color: #eff0ec;
+  color: #f0efeb;
   line-height: 32px;
   opacity: 0;
 }
@@ -326,14 +326,14 @@ header [data-search="close"] {
   clear: both;
 }
 #items .item {
-  background-color: #eff0ec;
-  border: 2px solid #eff0ec;
+  background-color: #f0efeb;
+  border: 2px solid #f0efeb;
   display: block;
   line-height: 1.3;
   position: relative;
 }
 #items .item:hover {
-  color: #eff0ec;
+  color: #f0efeb;
   z-index: 10;
 }
 #items .item.hide {
@@ -454,7 +454,7 @@ header [data-search="close"] {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-color: #eff0ec;
+  background-color: #f0efeb;
   z-index: 999;
 }
 #mask .runner {
