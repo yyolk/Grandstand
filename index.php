@@ -84,10 +84,10 @@
     <script id="item_template" type="text/x-handlebars-template">
       {{#each items}}
         <a href="{{{shortUrl}}}"class="item {{status}} {{score}} {{type}} {{assignedToID}}" target="_blank">
-          <div>
-            <strong>#{{number}}</strong>
+          <p>
+            <b>#{{number}}</b>
             <span class="title">{{title}}</span>
-          </div>
+          </p>
         </a>
       {{/each}}
     </script>

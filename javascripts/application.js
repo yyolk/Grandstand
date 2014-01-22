@@ -3107,6 +3107,19 @@ $(document).ready(function() {
   var wrapperWidth = isotopeGridWidth * Math.floor(windowWidth / isotopeGridWidth);
   var wrapperWidthFlex = wrapperWidth / windowWidth * 100;
 
+  // Window is scrolling
+  $(window).scroll(function(){
+    var scrollHeight = $(window).scrollTop();
+
+    if (scrollHeight > 0){
+      $('body').addClass('is-scrolling');
+    }
+
+    if (scrollHeight == 0){
+      $('body').removeClass('is-scrolling');
+    }
+  });
+
   // Center content in browser based on isotope grid
   $('.width-wrapper').width( wrapperWidthFlex + '%');
 
