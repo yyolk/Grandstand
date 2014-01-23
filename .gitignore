@@ -8,4 +8,5 @@ tmp/
 node_modules
 .sass-cache/
 stylesheets/css/
-javascripts/coffeescript/
+javascripts/application.js
+javascripts/application.min.js
