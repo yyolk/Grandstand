@@ -89,6 +89,10 @@ a {
     float: left;
     margin-left: -1px;
 
+    &:hover {
+      box-shadow: inset 0 0 0 1px $color-background;
+    }
+
     &:first-child {
       border-radius: 3px 0 0 3px;
       margin-left: 0;
@@ -161,6 +165,10 @@ header {
       font-family: $font-base;
       font-size: inherit;
       font-style: italic;
+    }
+
+    &:hover {
+      background-color: transparent;
     }
 
     &:focus {
@@ -275,6 +283,10 @@ header {
     &:hover {
       color: $color-background;
       z-index: 10;
+
+      .item-meta {
+        display: block;
+      }
     }
 
     &.hide {
@@ -292,6 +304,27 @@ header {
   b {
     font-weight: normal;
   }
+
+  .item-meta {
+    @include position(absolute, 0 0px 0px 0px);
+    display: none;
+    padding: 1em 0.25em 0 0;
+    z-index: 1;
+
+    li {
+      float: right;
+      padding-right: 0.25em;
+
+      &:first-child {
+        border: 0;
+      }
+    }
+
+    [data-icon] {
+      font-size: 2em;
+      opacity: 0.6;
+    }
+  }
 }
 
 // STATUSES
@@ -301,6 +334,10 @@ header {
 
   &:hover {
     background-color: $color;
+  }
+
+  .item-meta {
+    @include background-image(linear-gradient(to bottom, rgba($color, 0), $color 50%));
   }
 }
 
@@ -415,11 +452,23 @@ header {
   content: "\274E";
 }
 
+[data-icon="followers"]::before {
+  content: "\1F465";
+}
+
 [data-icon="grid"]::before {
   content: "\268F";
 }
 
+[data-icon="heart"]::before {
+  content: "\2665";
+}
+
 [data-icon="list"]::before {
   content: "\2630"
+}
+
+[data-icon="comments"]::before {
+  content: "\E720";
 }
 

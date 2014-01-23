@@ -88,6 +88,20 @@
             <b>#{{number}}</b>
             <span class="title">{{title}}</span>
           </p>
+          <ul class="item-meta">
+            <li>
+              <i data-icon="comments"></i>
+              1
+            </li>
+            <li>
+              <i data-icon="heart"></i>
+              1
+            </li>
+            <li>
+              <i data-icon="followers"></i>
+              1
+            </li>
+          </ul>
         </a>
       {{/each}}
     </script>
