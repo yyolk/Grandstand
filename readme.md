@@ -29,7 +29,7 @@ Grandstand can easily be deployed to Heroku, but you probably don't want to put 
 2. Setup a new Heroku application and procure its git repository URL.
 3. Add that repo as a remote for your local clone: `get remote add heroku git@heroku.com:your-app-url.git`
 4. Make sure that you have the Heroku gem or toolbelt: `gem install heroku`
-5. Set your Grandstand configuration on Heroku. See `config.template.php` for info on the required variables. Example: `heroku config:set api_username=josh.jordan@gmail.com api_key=asdfqwerty1234 product_id=5555 product_name=myproduct`
+5. Set your Grandstand configuration on Heroku. See `config.template.php` for info on the required variables. Example: `heroku config:set api_username=yourname@gmail.com api_key=asdfqwerty1234 product_id=5555 product_name=myproduct`
 6. Deploy: `git push heroku master`
 7. Visit the Heroku application in your favorite browser.
 
