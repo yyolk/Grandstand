@@ -1,0 +1,19 @@
+// ICONS
+@include font-face(entypo, '/fonts/entypo/entypo');
+
+[data-icon] {
+  font-family: $font-icon;
+  font-size: 30px;
+}
+
+[data-icon="close"]::before {
+  content: "\274E";
+}
+
+[data-icon="grid"]::before {
+  content: "\268F";
+}
+
+[data-icon="list"]::before {
+  content: "\2630"
+}

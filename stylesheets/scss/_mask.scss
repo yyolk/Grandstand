@@ -1,0 +1,30 @@
+// LOADING ANIMATION
+@include keyframes(pulse) {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#mask {
+  @include position(absolute, 0px 0px 0px 0px);
+  background-color: $color-background;
+  z-index: 999;
+
+  .runner {
+    $height: 40px;
+    $width: 35px;
+    @include animation(pulse 0.4s infinite alternate);
+    @include position(absolute, 50% 0 0 50%);
+    @include size(27px 33px);
+    background-image: url("../../images/runner-tan.png");
+    margin-left: -($width / 2);
+    margin-top: -($height / 2);
+  }
+}
+
+.is-loading {
+  overflow: hidden;
+}

@@ -1,0 +1,152 @@
+// HEADER
+header {
+  @include transition(all 0.3s ease-in);
+  @include position(fixed, 0px 0px 0 0px);
+  background-color: $color-header;
+  border-bottom: 1px solid transparent;
+  min-height: $height-header;
+  z-index: 9999;
+
+  .is-loading & {
+    @include transform(translateY(-($height-header + 1px)));
+  }
+
+  .is-scrolling & {
+    border-color: $color-header-border;
+  }
+
+  h1 {
+    float: left;
+    margin-right: 10px;
+
+    a {
+      @include size(24px $height-header);
+      background-image: url("../../images/runner-tan.png");
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+      display: block;
+    }
+  }
+
+  .view-actions {
+    float: right;
+    margin: 10px 0;
+  }
+
+  .view-action {
+    float: left;
+    margin-left: 10px;
+    position: relative;
+  }
+
+  [data-search="item"] {
+    @extend %button;
+    @include appearance(none);
+    @include transition(width, 0.2s);
+    background-color: transparent;
+    cursor: text;
+    font-size: 14px;
+    width: 160px;
+
+    @include placeholder {
+      color: $color-button;
+      font-family: $font-base;
+      font-size: inherit;
+      font-style: italic;
+    }
+
+    &:focus {
+      @extend %button.active;
+      outline: none;
+      width: 260px;
+
+      @include placeholder {
+        color: rgba($color-background, 0.5);
+      }
+
+      + [data-search="close"] {
+        cursor: pointer;
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+
+  [data-search="close"] {
+    @include position(absolute, 0px 10px 0 0);
+    @include size(10px $height-button);
+    color: $color-background;
+    line-height: $height-button + 2px;
+    opacity: 0;
+  }
+
+  [data-toggle="group"] {
+    @extend %button-group;
+  }
+}
+
+// DROPDOWN
+.dropdown {
+  float: left;
+  padding: 10px 0 10px 10px;
+  position: relative;
+}
+
+.dropdown-toggle {
+  @extend %button;
+}
+
+.dropdown-menu {
+  $background: #222;
+  $width: 160px;
+  @include position(absolute, 43px 0 0 50%);
+  background-color: $background;
+  border-radius: 5px;
+  display: none;
+  margin-left: -($width / 2);
+  padding: 5px 0;
+  width: $width;
+
+  &::before {
+    $size: 10px;
+    $margin: -($size / 2);
+    @include position(absolute, 0px 0 0 50%);
+    @include size($size);
+    @include transform(rotate(45deg));
+    background-color: $background;
+    content: "";
+    margin: $margin 0 0 $margin;  
+  }
+
+  a.filter {
+    @include ellipsis;
+    color: #CCC;
+    cursor: pointer;
+    display: block;
+    height: $height-button;
+    line-height: $height-button;
+    padding: 0 15px;
+
+    &:hover {
+      background-color: rgba(white, 0.05);
+      color: white;
+    }
+
+    &.active,
+    &.active:hover {
+      background-color: black;
+      color: white;
+      cursor: default;
+    }
+  }
+}
+
+.open {
+  .dropdown-menu {
+    display: block;
+  }
+}

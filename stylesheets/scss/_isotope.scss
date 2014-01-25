@@ -1,0 +1,22 @@
+// ISOTOPE 
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+}
+
+.isotope {
+  @include transition-property(height, width); 
+
+  .isotope-item {
+    @include transition-property(transform, opacity);
+  }
+}
+
+.isotope,
+.isotope .isotope-item {
+  @include transition-duration(0.8s);
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}

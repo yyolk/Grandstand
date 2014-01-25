@@ -1,0 +1,31 @@
+* {
+  @include box-sizing(border-box);
+}
+
+html, 
+body {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: $font-base;
+  color: $color-text;
+  background-color: $color-background;
+  border: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.width-wrapper {
+  @include clearfix;
+  margin: 0 auto;
+}

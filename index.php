@@ -77,9 +77,6 @@
       </div>
     </div>
   </header>
-  <div id="mask">
-    <div class="runner"></div>
-  </div>
   <div id="items" class="width-wrapper" data-view="grid">
     <script id="item_template" type="text/x-handlebars-template">
       {{#each items}}
@@ -91,6 +88,9 @@
         </a>
       {{/each}}
     </script>
+  </div>
+  <div id="mask">
+    <div class="runner"></div>
   </div>
 </body>
 </html>

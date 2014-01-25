@@ -1,0 +1,69 @@
+// VARIABLES
+$color-background: #F0EFEB;
+$color-text:       #444;
+
+$color-header: rgba($color-background, 0.9);
+$color-header-border: darken($color-background, 20%);
+
+$color-button: darken($color-background, 30%);
+
+$color-defect: #DB6463;
+$color-story:  #32BF90;
+$color-task:   #E5BC3B;
+$color-test:   #448DD9;
+
+$height-header: 50px;
+$height-button: 30px;
+
+$font-base: "avenir next", avenir, $helvetica;
+$font-icon: entypo;
+
+// MIXINS
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// EXTENDS
+%button,
+.button {
+  border-radius: 3px;
+  border: 1px solid $color-button;
+  color: $color-button;
+  cursor: pointer;
+  display: inline-block;
+  height: $height-button;
+  line-height: $height-button;
+  padding: 0 10px;
+
+  &:hover {
+    background-color: $color-button;
+    color: white;
+  }
+
+  &.active,
+  &.active:hover {
+    background-color: $color-button;
+    color: white;
+    cursor: default;
+  }
+}
+
+%button-group,
+.button-group {
+  .button {
+    border-radius: 0;
+    float: left;
+    margin-left: -1px;
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+      margin-left: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}

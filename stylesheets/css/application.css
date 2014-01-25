@@ -47,43 +47,6 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
-  font-family: entypo;
-  font-weight: normal;
-  font-style: normal;
-  src: url("/fonts/entypo/entypo.eot");
-  src: url("/fonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("/fonts/entypo/entypo.woff") format("woff"), url("/fonts/entypo/entypo.ttf") format("truetype"), url("/fonts/entypo/entypo.svg#entypo") format("svg");
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  font-size: 14px;
-  line-height: 20px;
-  font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444444;
-  background-color: #f0efeb;
-  border: 0;
-}
-
-h1 {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 header [data-search="item"], .dropdown-toggle,
 .button {
   border-radius: 3px;
@@ -124,6 +87,60 @@ header [data-toggle="group"] .button:last-child,
   border-radius: 0 3px 3px 0;
 }
 
+@font-face {
+  font-family: entypo;
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/entypo/entypo.eot");
+  src: url("/fonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("/fonts/entypo/entypo.woff") format("woff"), url("/fonts/entypo/entypo.ttf") format("truetype"), url("/fonts/entypo/entypo.svg#entypo") format("svg");
+}
+
+[data-icon] {
+  font-family: entypo;
+  font-size: 30px;
+}
+
+[data-icon="close"]::before {
+  content: "\274E";
+}
+
+[data-icon="grid"]::before {
+  content: "\268F";
+}
+
+[data-icon="list"]::before {
+  content: "\2630";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "avenir next", avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444444;
+  background-color: #f0efeb;
+  border: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 .width-wrapper {
   *zoom: 1;
   margin: 0 auto;
@@ -134,6 +151,73 @@ header [data-toggle="group"] .button:last-child,
 }
 .width-wrapper:after {
   clear: both;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#mask {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #f0efeb;
+  z-index: 999;
+}
+#mask .runner {
+  -webkit-animation: pulse 0.4s infinite alternate;
+  -moz-animation: pulse 0.4s infinite alternate;
+  animation: pulse 0.4s infinite alternate;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27px;
+  height: 33px;
+  background-image: url("../../images/runner-tan.png");
+  margin-left: -17.5px;
+  margin-top: -20px;
+}
+
+.is-loading {
+  overflow: hidden;
 }
 
 header {
@@ -408,73 +492,6 @@ header [data-search="close"] {
   height: 40px;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-o-keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-#mask {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: #f0efeb;
-  z-index: 999;
-}
-#mask .runner {
-  -webkit-animation: pulse 0.4s infinite alternate;
-  -moz-animation: pulse 0.4s infinite alternate;
-  animation: pulse 0.4s infinite alternate;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 27px;
-  height: 33px;
-  background-image: url("../../images/runner-tan.png");
-  margin-left: -17.5px;
-  margin-top: -20px;
-}
-
-.is-loading {
-  overflow: hidden;
-}
-
 .isotope-hidden.isotope-item {
   pointer-events: none;
 }
@@ -500,21 +517,4 @@ header [data-search="close"] {
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
-}
-
-[data-icon] {
-  font-family: entypo;
-  font-size: 30px;
-}
-
-[data-icon="close"]::before {
-  content: "\274E";
-}
-
-[data-icon="grid"]::before {
-  content: "\268F";
-}
-
-[data-icon="list"]::before {
-  content: "\2630";
 }
