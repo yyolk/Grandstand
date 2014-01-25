@@ -1,0 +1,34 @@
+// ITEMS DETAILS
+.item-details {
+  @include position(fixed, 0px 0px 0px 0px);
+  z-index: 9999;
+}
+
+// STATUSES
+@mixin item-details-type($color) {
+  background-color: rgba($color, 0.9);
+}
+
+.item-details {
+  &.defect {
+    @include item-details-type($color-defect);
+  }
+
+  &.task {
+    @include item-details-type($color-task);
+  }
+
+  &.story {
+    @include item-details-type($color-story);
+  }
+
+  &.test {
+    @include item-details-type($color-test);
+  }
+}
+
+.show-item-details {
+  .items-wrapper {
+    -webkit-filter: blur(5px);    
+  }
+}
