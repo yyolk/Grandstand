@@ -1,6 +1,6 @@
 <?php
 require 'init.php';
-require 'libs/Requests/library/Requests.php';
+require '../libs/Requests/library/Requests.php';
 
 Requests::register_autoloader();
 

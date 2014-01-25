@@ -1,4 +1,4 @@
-<?php require 'init.php'; ?>
+<?php require 'resources/init.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

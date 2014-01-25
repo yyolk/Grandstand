@@ -16,7 +16,7 @@ Getting started is simple, assuming you have a Sprint.ly account:
 
 1. Clone this repository recursively (`git clone --recursive git@github.com:andrewliebchen/Grandstand.git`). Without the `--recursive` flag, you won't get the necessary submodule.
 1. Clone or download this repo.
-2. Open `config.template.php`, fill in your Sprint.ly user, product, and API key information.
+2. Open `resources/config.template.php`, fill in your Sprint.ly user, product, and API key information.
 3. Save this file as `config.php`.
 4. Setup the files on a webserver, or run locally with [MAMP](http://www.mamp.info/en/index.html).
 5. Open `index.php` in your favorite browser.

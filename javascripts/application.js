@@ -3197,7 +3197,7 @@ $(document).ready(function() {
   for (var h=0; h < statuses.length; h++) {
     var status = statuses[h];
     $.ajax({
-      url: '/items.php',
+      url: '../resources/items.php',
       type: 'GET',
       data: {status : status},
       dataType: "json",
@@ -3240,7 +3240,7 @@ $(document).ready(function() {
   
   // Populate the users dropdown
   $.ajax({
-    url: '/people.php',
+    url: '../resources/people.php',
     type: 'GET',
     dataType: 'json',
     success: function(json) {
