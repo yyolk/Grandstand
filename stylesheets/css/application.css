@@ -543,9 +543,6 @@ header [data-search="close"] {
   background-color: transparent;
   cursor: default;
 }
-.item-details .item .title {
-  display: none;
-}
 
 .item-content {
   width: 70%;

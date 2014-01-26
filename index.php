@@ -102,8 +102,8 @@
   
   <section class="item-details" data-type="">
     <div class="item-details-wrapper">
-      <aside data-target="item"></aside>
       <!-- HANDLEBARS THIS SHIT -->
+      <aside data-target="item"></aside>
       <div class="item-content">
         <h2 data-target="title"></h2>
         <p data-target="description"></p>
