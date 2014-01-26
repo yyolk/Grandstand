@@ -1,7 +1,55 @@
 // ITEMS DETAILS
 .item-details {
   @include position(fixed, 0px 0px 0px 0px);
+  @include animation(item-details $timing-item-details ease-out);
   z-index: 9999;
+  display: none;
+  color: $color-background;
+
+  .item-details-wrapper {
+    @extend %width-wrapper;
+    width: 700px;
+    padding: 30px;
+  }
+
+  aside {
+    width: 25%;
+    float: left;
+    position: relative;
+  }
+
+  .item-content {
+    width: 70%;
+    float: right;
+    font-size: 16px;
+  }
+
+  .item {
+    @include position(absolute, 0px 0px 0 0);
+    background-color: transparent;
+    border: 2px solid $color-background;
+    box-shadow: none;
+    color: $color-background;
+
+    .title {
+      display: none;
+    }
+  }
+}
+
+[data-hide="item-details"] {
+  @include position(absolute, 0px 0px 0 0);
+  @include size($height-header);
+  color: $color-background;
+  cursor: pointer;
+  font-size: 60px;
+  line-height: $height-header;
+  opacity: 0.6;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 // STATUSES
@@ -10,25 +58,42 @@
 }
 
 .item-details {
-  &.defect {
+  &[data-type="defect"] {
     @include item-details-type($color-defect);
   }
 
-  &.task {
+  &[data-type="task"] {
     @include item-details-type($color-task);
   }
 
-  &.story {
+  &[data-type="story"] {
     @include item-details-type($color-story);
   }
 
-  &.test {
+  &[data-type="test"] {
     @include item-details-type($color-test);
   }
 }
 
 .show-item-details {
   .items-wrapper {
+    @include transition(-webkit-filter, $timing-item-details, ease-in);
     -webkit-filter: blur(5px);    
+  }
+
+  .item-details {
+    display: block;
+  }
+}
+
+// ANIMATION
+@include keyframes(item-details) {
+  0% {
+    @include transform(scale(0.3));
+    opacity: 0;
+  }
+  100% {
+    @include transform(scale(1));
+    opacity: 1;
   }
 }

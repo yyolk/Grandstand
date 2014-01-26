@@ -12,11 +12,16 @@ $color-story:  #32BF90;
 $color-task:   #E5BC3B;
 $color-test:   #448DD9;
 
+// Measurement
 $height-header: 50px;
 $height-button: 30px;
 
+// Fonts
 $font-base: "avenir next", avenir, $helvetica;
 $font-icon: entypo;
+
+// Timing
+$timing-item-details: 0.2s;
 
 // MIXINS
 @mixin ellipsis {
@@ -26,6 +31,12 @@ $font-icon: entypo;
 }
 
 // EXTENDS
+%width-wrapper,
+.width-wrapper {
+  @include clearfix;
+  margin: 0 auto;
+}
+
 %button,
 .button {
   border-radius: 3px;

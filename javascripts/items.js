@@ -96,6 +96,21 @@ $(document).ready(function() {
     isotopeContainer.isotope({ filter: selector });
   });
 
+  // Item details
+  $(document).on('click', '[data-show="item-details"]', function(){
+    var itemType = $(this).data('type');
+    var theItem = $(this).clone().attr('style', '');
+    $('body').addClass('show-item-details');
+    $('.item-details').attr('data-type', itemType);
+    $('[data-target="item"]').append(theItem);
+  });
+
+  $(document).on('click', '[data-hide="item-details"]', function(){
+    $('body').removeClass('show-item-details');
+    $('.item-details').attr('data-type', '');
+    $('[data-target="item"]').find('.item').remove();
+  });
+
   // Collect and render items
   for (var h=0; h < statuses.length; h++) {
     var status = statuses[h];

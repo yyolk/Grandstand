@@ -56,6 +56,10 @@ header {
       font-style: italic;
     }
 
+    &:hover {
+      background-color: transparent;
+    }
+
     &:focus {
       @extend %button.active;
       outline: none;

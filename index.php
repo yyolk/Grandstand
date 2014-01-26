@@ -13,10 +13,10 @@
   <link href="stylesheets/css/application.css" rel="stylesheet" type="text/css"> 
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="javascripts/application.min.js"></script>
+  <script src="javascripts/application.js"></script>
 </head>
 
-<body class="is-loading show-item-details">
+<body class="is-loading">
   <div class="items-wrapper">
     <header>
       <div class="width-wrapper">
@@ -81,12 +81,12 @@
     <section id="items" class="items width-wrapper" data-view="grid">
       <script id="item_template" type="text/x-handlebars-template">
         {{#each items}}
-          <a href="{{{shortUrl}}}"class="item {{status}} {{score}} {{type}} {{assignedToID}}" target="_blank">
+          <div class="item {{status}} {{score}} {{assignedToID}}" data-show="item-details" data-type="{{type}}">
             <p>
               <b>#{{number}}</b>
               <span class="title">{{title}}</span>
             </p>
-          </a>
+          </div>
         {{/each}}
       </script>
     </section>
@@ -96,10 +96,15 @@
     <div class="runner"></div>
   </div>
   
-  <section class="item-details story">
-    <div class="width-wrapper">
-
+  <section class="item-details" data-type="">
+    <div class="item-details-wrapper">
+      <aside data-target="item"></aside>
+      <div class="item-content">
+        <h2>Sed molestie augue sit amet leo consequat posuere.</h2>
+        <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non.</p>
+      </div>
     </div>
+    <a class="item-details-close" data-hide="item-details" data-icon="close"></a>
   </section>
 </body>
 </html>
