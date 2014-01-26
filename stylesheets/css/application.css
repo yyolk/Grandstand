@@ -543,8 +543,11 @@ header [data-search="close"] {
   background-color: transparent;
   cursor: default;
 }
+.item-details .item .title {
+  display: none;
+}
 
-.item-content {
+.item-details-content {
   width: 70%;
   float: right;
   font-size: 16px;

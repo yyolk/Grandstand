@@ -1,9 +1,10 @@
+var items = []; // Array for grid items
+
 $(document).ready(function() {
-  var items = []; // Array for grid items
   var users = []; // Array for user dropdown
   var statuses = ['in-progress', 'completed', 'backlog', 'someday'];
 
-  var isotopeContainer = $('#items');
+  var isotopeContainer = $('.items');
   var isotopeGridWidth = 100 // Smallest size for item grid
 
   var windowWidth = $(window).width();
@@ -130,9 +131,9 @@ $(document).ready(function() {
         };
 
         var context = { items: items };
-        var source = $("#item_template").html();
+        var source = $('#item_template').html();
         template = Handlebars.compile(source);
-        $("#items").append(template(context));
+        $('[data-target="items"]').append(template(context));
         console.log(context);
         console.log(source);
       }

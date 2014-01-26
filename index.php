@@ -78,14 +78,15 @@
         </div>
       </div>
     </header>
-    <section id="items" class="items width-wrapper" data-view="grid">
+    <section class="items width-wrapper" data-view="grid" data-target="items">
       <script id="item_template" type="text/x-handlebars-template">
         {{#each items}}
           <div 
             class="item {{status}} {{score}} {{assignedToID}}" 
             data-show="item-details" 
             data-type="{{type}}"
-            data-description="{{description}}">
+            data-description="{{description}}"
+            data-title="{{title}}">
             <p>
               <b>#{{number}}</b>
               <span class="title">{{title}}</span>
@@ -100,13 +101,16 @@
     <div class="runner"></div>
   </div>
   
-  <section class="item-details" data-type="">
+  <section class="item-details" data-type>
     <div class="item-details-wrapper">
-      <!-- HANDLEBARS THIS SHIT -->
       <aside data-target="item"></aside>
-      <div class="item-content">
-        <h2 data-target="title"></h2>
-        <p data-target="description"></p>
+      <div class="item-details-content" data-target="item-details">
+        <script id="item_details_template" type="text/x-handlebars-template">
+          <div data-remove>
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+          </div>
+        </script>
       </div>
     </div>
     <a class="item-details-close" data-hide="item-details" data-icon="close"></a>

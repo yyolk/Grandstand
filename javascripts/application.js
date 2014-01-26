@@ -3095,12 +3095,13 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 
 }(jQuery, this, document));
 
+var items = []; // Array for grid items
+
 $(document).ready(function() {
-  var items = []; // Array for grid items
   var users = []; // Array for user dropdown
   var statuses = ['in-progress', 'completed', 'backlog', 'someday'];
 
-  var isotopeContainer = $('#items');
+  var isotopeContainer = $('.items');
   var isotopeGridWidth = 100 // Smallest size for item grid
 
   var windowWidth = $(window).width();
@@ -3227,9 +3228,9 @@ $(document).ready(function() {
         };
 
         var context = { items: items };
-        var source = $("#item_template").html();
+        var source = $('#item_template').html();
         template = Handlebars.compile(source);
-        $("#items").append(template(context));
+        $('[data-target="items"]').append(template(context));
         console.log(context);
         console.log(source);
       }
@@ -3270,21 +3271,27 @@ $(document).ready(function(){
   // Item details
   $(document).on('click', '[data-show="item-details"]', function(){
     var itemType = $(this).data('type');
-    var title = $(this).find('.title').text();
-    var description = $(this).data('description');
-    var theItem = $(this).clone().attr('style', '');
+    var theItem = $(this).clone().attr('style', '').attr('data-remove', '');
+    var context = {
+      title : $(this).data('title'),
+      description : $(this).data('description')
+    }
+    
+    // Make the item appear
     $('body').addClass('show-item-details');
     $('.item-details').attr('data-type', itemType);
 
     // The item content
     $('[data-target="item"]').append(theItem);
-    $('[data-target="title"]').text(title);
-    $('[data-target="description"]').text(description)
+
+    // Populate the handlebars template
+    template = Handlebars.compile($("#item_details_template").html());
+    $('[data-target="item-details"]').append(template(context));
   });
 
   $(document).on('click', '[data-hide="item-details"]', function(){
     $('body').removeClass('show-item-details');
     $('.item-details').attr('data-type', '');
-    $('[data-target="item"]').find('.item').remove();
+    $('[data-remove]').remove();
   });
 });
