@@ -1,0 +1,33 @@
+.comments {
+  // padding: $padding-item-details 0;
+  // border-top: 1px solid $color-background;
+}
+
+.comment {
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+  
+  .avatar {
+    $size: 50px;
+    @include box-flex(1);
+    @include size($size);
+    border-radius: $size / 2;
+    border: 1px solid $color-background;
+    min-width: $size;
+    margin-right: 10px;
+    overflow: hidden;
+
+    img {
+      
+    }
+  }
+
+  article {
+    @include box-flex(1);
+    padding: 1em 1em 0;
+    border-radius: 3px;
+    background-color: $color-background;
+  }
+}

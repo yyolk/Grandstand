@@ -112,6 +112,20 @@
           </div>
         </script>
       </div>
+      <div class="comments">
+        <div class="comment">
+          <div class="avatar"></div>
+          <article>
+            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
+          </article>
+        </div>
+        <div class="comment">
+          <div class="avatar"></div>
+          <article>
+            <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
+          </article>
+        </div>
+      </div>
     </div>
     <a class="item-details-close" data-hide="item-details" data-icon="close"></a>
   </section>

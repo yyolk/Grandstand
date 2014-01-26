@@ -1,6 +1,5 @@
 // ITEMS DETAILS
 .item-details {
-  $padding: 20px;
   @include position(fixed, 0px 0px 0px 0px);
   @include animation(item-details $timing-item-details ease-out);
   color: $color-background;
@@ -10,7 +9,7 @@
 
   .item-details-wrapper {
     @extend %width-wrapper;
-    padding: $padding 0;
+    padding: $padding-item-details 0;
     width: 440px;
   }
 
@@ -18,7 +17,7 @@
     border-bottom: 1px solid $color-background;
     height: 50px;
     overflow: hidden;
-    padding: 0 $padding;
+    padding: 0 $padding-item-details;
   }
 
   .item {
@@ -38,7 +37,7 @@
   }
 
   [data-target="item-details"] {
-    padding: $padding;
+    padding: $padding-item-details;
   }
 }
 
@@ -60,6 +59,10 @@
 // STATUSES
 @mixin item-details-type($color) {
   background-color: rgba($color, 0.9);
+
+  .comment article {
+    color: $color;
+  }
 }
 
 .item-details {
