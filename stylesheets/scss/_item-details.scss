@@ -1,25 +1,27 @@
 // ITEMS DETAILS
 .item-details {
+  $padding: 20px;
   @include position(fixed, 0px 0px 0px 0px);
   @include animation(item-details $timing-item-details ease-out);
-  z-index: 9999;
-  display: none;
   color: $color-background;
+  display: none;
+  font-size: 16px;
+  z-index: 9999;
 
   .item-details-wrapper {
     @extend %width-wrapper;
-    width: 700px;
-    padding: 30px;
+    padding: $padding 0;
+    width: 440px;
   }
 
-  aside {
-    width: 25%;
-    float: left;
-    position: relative;
+  [data-target="item"] {
+    border-bottom: 1px solid $color-background;
+    height: 50px;
+    overflow: hidden;
+    padding: 0 $padding;
   }
 
   .item {
-    @include position(absolute, 0px 0px 0 0);
     background-color: transparent;
     border: 2px solid $color-background;
     box-shadow: none;
@@ -34,12 +36,10 @@
       display: none;
     }
   }
-}
 
-.item-details-content {
-  width: 70%;
-  float: right;
-  font-size: 16px;
+  [data-target="item-details"] {
+    padding: $padding;
+  }
 }
 
 [data-hide="item-details"] {

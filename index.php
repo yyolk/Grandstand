@@ -103,8 +103,8 @@
   
   <section class="item-details" data-type>
     <div class="item-details-wrapper">
-      <aside data-target="item"></aside>
-      <div class="item-details-content" data-target="item-details">
+      <div data-target="item"></div>
+      <div data-target="item-details">
         <script id="item_details_template" type="text/x-handlebars-template">
           <div data-remove>
             <h2>{{title}}</h2>
