@@ -81,7 +81,11 @@
     <section id="items" class="items width-wrapper" data-view="grid">
       <script id="item_template" type="text/x-handlebars-template">
         {{#each items}}
-          <div class="item {{status}} {{score}} {{assignedToID}}" data-show="item-details" data-type="{{type}}">
+          <div 
+            class="item {{status}} {{score}} {{assignedToID}}" 
+            data-show="item-details" 
+            data-type="{{type}}"
+            data-description="{{description}}">
             <p>
               <b>#{{number}}</b>
               <span class="title">{{title}}</span>
@@ -99,9 +103,10 @@
   <section class="item-details" data-type="">
     <div class="item-details-wrapper">
       <aside data-target="item"></aside>
+      <!-- HANDLEBARS THIS SHIT -->
       <div class="item-content">
-        <h2>Sed molestie augue sit amet leo consequat posuere.</h2>
-        <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non.</p>
+        <h2 data-target="title"></h2>
+        <p data-target="description"></p>
       </div>
     </div>
     <a class="item-details-close" data-hide="item-details" data-icon="close"></a>

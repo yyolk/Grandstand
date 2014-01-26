@@ -152,6 +152,7 @@ h1 {
 h2 {
   padding-bottom: 1em;
   font-weight: bold;
+  font-size: 18px;
 }
 
 li {
@@ -529,11 +530,6 @@ header [data-search="close"] {
   float: left;
   position: relative;
 }
-.item-details .item-content {
-  width: 70%;
-  float: right;
-  font-size: 16px;
-}
 .item-details .item {
   position: absolute;
   top: 0px;
@@ -543,8 +539,18 @@ header [data-search="close"] {
   box-shadow: none;
   color: #f0efeb;
 }
+.item-details .item[data-type]:hover {
+  background-color: transparent;
+  cursor: default;
+}
 .item-details .item .title {
   display: none;
+}
+
+.item-content {
+  width: 70%;
+  float: right;
+  font-size: 16px;
 }
 
 [data-hide="item-details"] {
