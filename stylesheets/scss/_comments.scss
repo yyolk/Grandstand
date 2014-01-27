@@ -3,31 +3,61 @@
   // border-top: 1px solid $color-background;
 }
 
-.comment {
-  @include display-box;
-  @include box-align(start);
-  @include box-orient(horizontal);
-  @include box-pack(start);
-  
+.comment {  
+  @include clearfix;
+  margin-bottom: 20px;
+
+  &:nth-of-type(even) {
+    .avatar {
+      margin: 0 20px 0 10px;
+      float: right;
+
+      &::before {
+        right: auto;
+        left: -11px;
+        margin: -5px 0 0 -5px;
+      }
+    }
+
+    article {
+      float: right;
+    }
+  }
+
   .avatar {
     $size: 50px;
-    @include box-flex(1);
     @include size($size);
-    border-radius: $size / 2;
-    border: 1px solid $color-background;
     min-width: $size;
-    margin-right: 10px;
-    overflow: hidden;
+    margin: 0 10px 0 20px;
+    position: relative;
+    float: left;
+
+    &::before {
+      $size-carrot: 10px;
+      $margin: -($size-carrot / 2);
+      @include position(absolute, 50% -11px 0 0);
+      @include size($size-carrot);
+      @include transform(rotate(45deg));
+      background-color: $color-background;
+      content: "";
+      display: block;
+      margin: $margin $margin 0 0;
+    }
 
     img {
-      
+      border-radius: $size / 2;
+      border: 1px solid $color-background;
+      max-width: $size;
+      position: relative;
+      display: block;
     }
   }
 
   article {
-    @include box-flex(1);
+    width: 400px - 60px;
     padding: 1em 1em 0;
     border-radius: 3px;
     background-color: $color-background;
+    float: left;
   }
 }

@@ -114,13 +114,17 @@
       </div>
       <div class="comments">
         <div class="comment">
-          <div class="avatar"></div>
+          <div class="avatar">
+            <img src="https://en.gravatar.com/userimage/44756173/a6a6a2a8bd06a7c8bc3cd442dd0957e3.png">
+          </div>
           <article>
             <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
           </article>
         </div>
         <div class="comment">
-          <div class="avatar"></div>
+          <div class="avatar">
+            <img src="https://en.gravatar.com/userimage/44756173/a6a6a2a8bd06a7c8bc3cd442dd0957e3.png">
+          </div>
           <article>
             <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
           </article>
