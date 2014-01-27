@@ -155,6 +155,11 @@ h2 {
   font-size: 18px;
 }
 
+h3 {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 p {
   padding-bottom: 1em;
 }
@@ -573,26 +578,14 @@ header [data-search="close"] {
 .item-details[data-type="defect"] {
   background-color: rgba(219, 100, 99, 0.9);
 }
-.item-details[data-type="defect"] .comment article {
-  color: #db6463;
-}
 .item-details[data-type="task"] {
   background-color: rgba(229, 188, 59, 0.9);
-}
-.item-details[data-type="task"] .comment article {
-  color: #e5bc3b;
 }
 .item-details[data-type="story"] {
   background-color: rgba(50, 191, 144, 0.9);
 }
-.item-details[data-type="story"] .comment article {
-  color: #32bf90;
-}
 .item-details[data-type="test"] {
   background-color: rgba(68, 141, 217, 0.9);
-}
-.item-details[data-type="test"] .comment article {
-  color: #448dd9;
 }
 
 .show-item-details .items-wrapper {
@@ -654,35 +647,29 @@ header [data-search="close"] {
 }
 
 .comment {
-  *zoom: 1;
-  margin-bottom: 20px;
-}
-.comment:before, .comment:after {
-  content: " ";
-  display: table;
-}
-.comment:after {
-  clear: both;
-}
-.comment:nth-of-type(even) .avatar {
-  margin: 0 20px 0 10px;
-  float: right;
-}
-.comment:nth-of-type(even) .avatar::before {
-  right: auto;
-  left: -11px;
-  margin: -5px 0 0 -5px;
-}
-.comment:nth-of-type(even) article {
-  float: right;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  margin: 0 20px 20px 20px;
 }
 .comment .avatar {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
   width: 50px;
   height: 50px;
   min-width: 50px;
-  margin: 0 10px 0 20px;
+  margin-right: 10px;
   position: relative;
-  float: left;
 }
 .comment .avatar::before {
   position: absolute;
@@ -702,17 +689,26 @@ header [data-search="close"] {
 }
 .comment .avatar img {
   border-radius: 25px;
-  border: 1px solid #f0efeb;
+  border: 2px solid #f0efeb;
   max-width: 50px;
   position: relative;
   display: block;
 }
 .comment article {
-  width: 340px;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
   padding: 1em 1em 0;
   border-radius: 3px;
   background-color: #f0efeb;
-  float: left;
+  color: #444444;
+}
+.comment article hgroup {
+  padding-bottom: 1em;
+}
+.comment article time {
+  font-size: 14px;
+  font-style: italic;
 }
 
 .isotope-hidden.isotope-item {

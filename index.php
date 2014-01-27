@@ -118,6 +118,10 @@
             <img src="https://en.gravatar.com/userimage/44756173/a6a6a2a8bd06a7c8bc3cd442dd0957e3.png">
           </div>
           <article>
+            <hgroup>
+              <h3>Andrew Liebchen</h3>
+              <time>Yesterday, 10:15am</time>
+            </hgroup>
             <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
           </article>
         </div>
@@ -126,6 +130,11 @@
             <img src="https://en.gravatar.com/userimage/44756173/a6a6a2a8bd06a7c8bc3cd442dd0957e3.png">
           </div>
           <article>
+            <hgroup>
+              <h3>Andrew Liebchen</h3>
+              <time>Yesterday, 12:15pm</time>
+            </hgroup>
+            <p>Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis.</p>
             <p>Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per.</p>
           </article>
         </div>

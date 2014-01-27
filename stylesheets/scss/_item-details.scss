@@ -59,10 +59,6 @@
 // STATUSES
 @mixin item-details-type($color) {
   background-color: rgba($color, 0.9);
-
-  .comment article {
-    color: $color;
-  }
 }
 
 .item-details {

@@ -1,36 +1,18 @@
-.comments {
-  // padding: $padding-item-details 0;
-  // border-top: 1px solid $color-background;
-}
-
-.comment {  
-  @include clearfix;
-  margin-bottom: 20px;
-
-  &:nth-of-type(even) {
-    .avatar {
-      margin: 0 20px 0 10px;
-      float: right;
-
-      &::before {
-        right: auto;
-        left: -11px;
-        margin: -5px 0 0 -5px;
-      }
-    }
-
-    article {
-      float: right;
-    }
-  }
-
+// COMMENTS
+.comment {
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+  margin: 0 $padding-item-details $padding-item-details $padding-item-details;
+  
   .avatar {
     $size: 50px;
+    @include box-flex(1);
     @include size($size);
     min-width: $size;
-    margin: 0 10px 0 20px;
+    margin-right: 10px;
     position: relative;
-    float: left;
 
     &::before {
       $size-carrot: 10px;
@@ -46,7 +28,7 @@
 
     img {
       border-radius: $size / 2;
-      border: 1px solid $color-background;
+      border: 2px solid $color-background;
       max-width: $size;
       position: relative;
       display: block;
@@ -54,10 +36,19 @@
   }
 
   article {
-    width: 400px - 60px;
+    @include box-flex(1);
     padding: 1em 1em 0;
     border-radius: 3px;
     background-color: $color-background;
-    float: left;
+    color: $color-text;
+
+    hgroup {
+      padding-bottom: 1em;
+    }
+
+    time {
+      font-size: 14px;
+      font-style: italic;
+    }
   }
 }
