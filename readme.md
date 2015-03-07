@@ -56,4 +56,4 @@ This project goal is to experiment with new ways of visualizing and interacting 
 Thanks for pitching in:
 
 * [Josh Jordan](https://github.com/joshjordan)
-* [Tim Stokke](https://github.com/t1mmen)
+* [Timm Stokke](https://github.com/t1mmen)
