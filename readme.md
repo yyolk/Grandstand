@@ -1,12 +1,12 @@
 # Grandstand: Visualize your Sprints
 
-[Sprint.ly](http://sprint.ly) is a great tool for Agile development, however it can be difficult to get a good sense of the size of your queue and how stories, tasks, and defects are distributed among your team.
+[Sprint.ly](http://sprint.ly) is a great tool for Agile development. However, it can be difficult to get a good sense of the size of your queue and how stories, tasks, and defects are distributed among your team.
 
 ![Screenshot](http://f.cl.ly/items/0o2s1l0b382z2T3Q4743/screenshot_full.png)
 
 Based on [Scrumly](https://github.com/simpleenergy/Scrumly) with interaction and visualization help from [Isotope](https://github.com/desandro/isotope), with Grandstand your Sprint.ly items are sized by their score, colored by their type, and arranged in a masonry grid.  You can filter your project's items by user, status, type, and score.
 
-Grandstand in action...
+Grandstand in action…
 
 ![Animated screenshot](http://f.cl.ly/items/0e3q151b00042H0a390d/granstand.gif)
 
